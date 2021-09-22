@@ -8,8 +8,8 @@ published: true
 
 # Test1
 
-```c#
-
+```c{numberLines: true}
+//12
 int reset(const char* str)
 {
     return strlen(str);
@@ -17,10 +17,17 @@ int reset(const char* str)
 ```
 
 
-```c#
 
-double reset(const char* str)
-{
-    return strlen(str);
-}
+```javascript{1,4-6}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
 ```

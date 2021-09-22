@@ -1,12 +1,15 @@
-import hljs from 'highlight.js';
-//import hljs from 'highlightjs-line-numbers.js'
+import hljs1 from 'highlight.js';
+import hljs from 'highlightjs-line-numbers.js'
 import './hightlight.css'
 import * as React from "react"
 import { graphql } from "gatsby"
 
 const MarkdownPage=(data)=>{
   React.useEffect(()=>{
-    hljs.highlightAll();
+    hljs1.highlightAll();
+
+    //hljs.initHighlightingOnLoad();
+    
   },[])
     //console.log(data);
     return(
