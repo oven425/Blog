@@ -393,8 +393,8 @@ const IndexPage = ({ data }) => {
   return (
     <div>
       {/* <div>{JSON.stringify(data.allMarkdownRemark)}</div> */}
-      <Link to="About">About</Link>
       
+
       <StaticImage
         alt="Clifford, a reddish-brown pitbull, dozing in a bean bag chair"
         src="48747312041_599e3549bc_c.jpg"
@@ -413,7 +413,8 @@ const IndexPage = ({ data }) => {
             }
           </ul>
         }
-      </div>     
+      </div>
+      <Link to="About">About</Link>
     </div>
   )
 }
