@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/oven425/Blog.git"
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
