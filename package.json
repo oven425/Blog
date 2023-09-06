@@ -7,7 +7,6 @@
   "keywords": [
     "gatsby"
   ],
-  "homepage": "https://github.com/oven425/Blog",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
