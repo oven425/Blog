@@ -3,13 +3,17 @@ import { StaticQueryDocument, graphql, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 type DataType = {
-    allFile: {
-      nodes: {
-        name: string
-      }[]
-    }
+  allMdx: {
+    nodes: {
+      frontmatter: {
+        date: string,
+        title: string
+      },
+      id: string,
+      excerpt: string
+    }[]
   }
-//https://www.gatsbyjs.com/blog/getting-started-with-typescript-in-gatsby
+}
 
 const BlogPage = ({ data }: PageProps<DataType>) => {
   //console.log(data.allFile)
@@ -17,40 +21,32 @@ const BlogPage = ({ data }: PageProps<DataType>) => {
     <Layout pageTitle="My Blog Posts">
       <ul>
         {
-          data.allFile.nodes.map(x=>(
-            <li>{x.name}</li>
+          data.allMdx.nodes.map((node) => (
+            <article key={node.id}>
+              <h2>{node.frontmatter.title}</h2>
+              <p>Posted: {node.frontmatter.date}</p>
+              <p>{node.excerpt}</p>
+            </article>
           ))
         }
-      
+
       </ul>
     </Layout>
   )
 }
 
-// const BlogPage = ({ data: { allFile } }: PageProps<DataType>) => {
-//   return (
-//     <Layout pageTitle="My Blog Posts">
-//       <ul>
-//       {
-      
-//         data.allFile.nodes.map(node => (
-//           <li key={node.name}>
-//             {node.name}
-//           </li>
-//         ))
-//       }
-//       </ul>
-//     </Layout>
-//   )
-// }
-
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
-        nodes {
-          name
+    allMdx(sort: { frontmatter: { date: DESC }}) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
         }
+        id
+        excerpt
       }
+    }
   }
 `
 
