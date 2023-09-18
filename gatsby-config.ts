@@ -22,8 +22,16 @@ const config: GatsbyConfig = {
         "icon": "src/images/icon.png"
       }
     },
-    "gatsby-plugin-mdx",
-    "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-prismjs`
+          }
+        ],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
