@@ -15,6 +15,7 @@ type DataType={
   }
 }
 const BlogPage = ({ data }:PageProps<DataType>) => {
+  console.log(data.allMdx.nodes)
   return (
     <Layout pageTitle="My Blog Posts">
       {
