@@ -206,8 +206,10 @@ const IndexPage = () => {
     //     src="../images/clifford.jpg"
     //   />
     // </Layout>
-    <div className=' bg-slate-200'>
-      
+    <div className='bg-gray-400 flex'>
+      <div>Header</div>
+      <div>Side</div>
+      <div>Conten</div>
     </div>
   )
 };
