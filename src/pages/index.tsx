@@ -206,10 +206,18 @@ const IndexPage = () => {
     //     src="../images/clifford.jpg"
     //   />
     // </Layout>
-    <div className='bg-gray-400 flex'>
-      <div>Header</div>
-      <div>Side</div>
-      <div>Conten</div>
+    <div className="flex flex-col h-screen">
+      <header className="bg-green-500 h-20 shrink-0">
+        header
+      </header>
+      <div className="flex flex-row h-[calc(100vh-5rem)]">
+        <aside className="bg-red-500 w-1/3 overflow-y-auto">
+          aside<br />aside<br />aside<br />aside<br />aside<br />aside<br />
+        </aside>
+        <main className="bg-blue-500 w-2/3 overflow-y-auto">
+          main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />
+        </main>
+      </div>
     </div>
   )
 };
