@@ -196,6 +196,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout';
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
+import ChildWindow from '../components/ChildWindow';
 
 const IndexPage = () => {
   return (
@@ -206,19 +207,44 @@ const IndexPage = () => {
     //     src="../images/clifford.jpg"
     //   />
     // </Layout>
+
     <div className="flex flex-col h-screen">
-      <header className="bg-green-500 h-20 shrink-0">
-        header
+      <header className=" bg-gray-950 h-20 shrink-0">
+        <div className="flex items-center justify-between h-full ">
+          <div className="text-white text-3xl font-bold p-1">
+            Developer notes
+          </div>
+          <div className=" bg-slate-50 p-1">
+            <a href='https://github.com/oven425'>
+              <svg height="36" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="36" data-view-component="true" className="octicon octicon-mark-github v-align-middle color-fg-default">
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </header>
       <div className="flex flex-row h-[calc(100vh-5rem)]">
-        <aside className="bg-red-500 w-1/3 overflow-y-auto">
+        <aside className="bg-red-500 w-1/6 overflow-y-auto">
           aside<br />aside<br />aside<br />aside<br />aside<br />aside<br />
         </aside>
-        <main className="bg-blue-500 w-2/3 overflow-y-auto">
+        <main className="bg-blue-500 w-5/6 overflow-y-auto">
           main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />
         </main>
       </div>
+      <ChildWindow/>
     </div>
+
+    // <div className="flex flex-col h-screen">
+    //   <header className=" bg-gray-950 h-20 shrink-0">
+    //   <div className="flex items-center justify-between h-full  bg-slate-950">
+    //     <div className=' w-6 h-6 bg-blue-400'></div>
+    //     <div className=' w-6 h-6 bg-red-400'></div>
+
+    //   </div>
+    //   </header>
+
+    // </div>
+
   )
 };
 export const Head = () => <Seo title="Home Page" />
