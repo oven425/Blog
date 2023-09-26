@@ -196,9 +196,14 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout';
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
-import ChildWindow from '../components/ChildWindow';
+import ChildWindow, { ChildWindow_Ref } from '../components/ChildWindow';
+import { useRef } from 'react';
 
 const IndexPage = () => {
+  const cw = useRef<ChildWindow_Ref>(null)
+  const open = ()=>{
+
+  }
   return (
     // <Layout pageTitle="Home Page">
     //   <p>I'm making this by following the Gatsby Tutorial.</p>
@@ -207,7 +212,7 @@ const IndexPage = () => {
     //     src="../images/clifford.jpg"
     //   />
     // </Layout>
-
+    
     <div className="flex flex-col h-screen">
       <header className=" bg-gray-950 h-20 shrink-0">
         <div className="flex items-center justify-between h-full ">
@@ -225,13 +230,18 @@ const IndexPage = () => {
       </header>
       <div className="flex flex-row h-[calc(100vh-5rem)]">
         <aside className="bg-red-500 w-1/6 overflow-y-auto">
+          <button onClick={x=>{cw.current?.open()}}>open</button>
           aside<br />aside<br />aside<br />aside<br />aside<br />aside<br />
         </aside>
         <main className="bg-blue-500 w-5/6 overflow-y-auto">
           main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />
         </main>
       </div>
-      <ChildWindow/>
+      <ChildWindow ref={cw}>
+        <div>
+          <button onClick={x=>cw.current?.close()}>close</button>
+        </div>
+      </ChildWindow>
     </div>
 
     // <div className="flex flex-col h-screen">
