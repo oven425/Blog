@@ -231,6 +231,9 @@ const IndexPage = () => {
       <div className="flex flex-row h-[calc(100vh-5rem)]">
         <aside className="bg-red-500 w-1/6 overflow-y-auto">
           <div>
+            <button onClick={() => cw.current?.open()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Open Childwindow
+            </button>
             <Link to='aa'>Blog</Link>
             <Link to='aa'>About</Link>
           </div>

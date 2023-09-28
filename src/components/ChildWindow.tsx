@@ -5,6 +5,7 @@ type ChildWindow_Props = {
     children: ReactNode,
     title?: string
     isShowCloseButton?: boolean
+    onclosed?:()=>void
 }
 
 export interface ChildWindow_Ref {
@@ -22,6 +23,10 @@ const ChildWindow = forwardRef<ChildWindow_Ref, ChildWindow_Props>((props, ref) 
             },
             close() {
                 setIsShow(x => false)
+                if(props.onclosed !== undefined){
+                    props.onclosed()
+                }
+                
             },
         }
     }, [])
