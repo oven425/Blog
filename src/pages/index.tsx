@@ -201,7 +201,7 @@ import { useRef } from 'react';
 
 const IndexPage = () => {
   const cw = useRef<ChildWindow_Ref>(null)
-  const open = ()=>{
+  const open = () => {
 
   }
   return (
@@ -212,7 +212,7 @@ const IndexPage = () => {
     //     src="../images/clifford.jpg"
     //   />
     // </Layout>
-    
+
     <div className="flex flex-col h-screen">
       <header className=" bg-gray-950 h-20 shrink-0">
         <div className="flex items-center justify-between h-full ">
@@ -230,30 +230,47 @@ const IndexPage = () => {
       </header>
       <div className="flex flex-row h-[calc(100vh-5rem)]">
         <aside className="bg-red-500 w-1/6 overflow-y-auto">
-          <button onClick={x=>{cw.current?.open()}}>open</button>
-          aside<br />aside<br />aside<br />aside<br />aside<br />aside<br />
+          <div>
+            <Link to='aa'>Blog</Link>
+            <Link to='aa'>About</Link>
+          </div>
+
         </aside>
         <main className="bg-blue-500 w-5/6 overflow-y-auto">
           main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />
         </main>
       </div>
-      <ChildWindow ref={cw}>
-        <div>
-          <button onClick={x=>cw.current?.close()}>close</button>
+      <ChildWindow ref={cw} title='TestAA'>
+        <div className="w-full max-w-xs bg-white">
+          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                Username
+              </label>
+              <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+            </div>
+            <div className="mb-6">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                Password
+              </label>
+              <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
+              <p className="text-red-500 text-xs italic">Please choose a password.</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <button onClick={x => cw.current?.close()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                Sign In
+              </button>
+              <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                Forgot Password?
+              </a>
+            </div>
+          </form>
+          <p className="text-center text-gray-500 text-xs">
+            &copy;2020 Acme Corp. All rights reserved.
+          </p>
         </div>
       </ChildWindow>
     </div>
-
-    // <div className="flex flex-col h-screen">
-    //   <header className=" bg-gray-950 h-20 shrink-0">
-    //   <div className="flex items-center justify-between h-full  bg-slate-950">
-    //     <div className=' w-6 h-6 bg-blue-400'></div>
-    //     <div className=' w-6 h-6 bg-red-400'></div>
-
-    //   </div>
-    //   </header>
-
-    // </div>
 
   )
 };
