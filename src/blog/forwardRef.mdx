@@ -1,0 +1,31 @@
+---
+title: "fowardRef的用途"
+date: "2023-10-01"
+slug: "fowardRef"
+tag: ["reactjs", "fowrdRef", "typescript"]
+---
+
+```tsx
+import ChildWindow from ChildWindow.tsx
+const default App = ()=>{
+    const btn = useRef()
+    return(
+        <div>
+            <button ref={btn}>Button</button>
+        </div>)
+}
+
+```
+
+
+```tsx
+const ChildWindow = ()=>{
+    const time = useRef()
+    return (
+        <div>
+            <p ref={time}></p>
+        </div>
+    )
+}
+export default ChildWindow
+```

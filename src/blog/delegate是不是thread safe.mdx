@@ -5,3 +5,21 @@ slug: "delegate-is-thread-safe?"
 published: false
 tags: ["c#", "delegate", "thread safe"]
 ---
+# delegate是不是 thread safe
+最近寫asp.net core使用了IOC
+```csharp
+public class EventBus
+{
+    public delegate void RecvDelegate();
+    public event RecvDelegate OnRecv;
+    public void Start()
+    {
+        //.....
+    }
+}
+
+app.MetGet('test', eventbus=>
+{
+    
+})
+```
