@@ -56,9 +56,11 @@ type LayoutProps = {
   title?:string,
   children?:ReactNode
 }
+
+//https://blog.camel2243.com/2019/11/14/css-%E6%90%9E%E6%87%82-flex-grow-flex-shirk-%E5%8F%8A-flex-basis-%E4%B8%89%E7%A8%AE%E5%B1%AC%E6%80%A7/
 const Layout = (props:LayoutProps)=>{
   return(
-    <div className="grid grid-rows-2 h-screen w-screen bg-red-300">
+    <div className="flex h-screen w-screen bg-red-300 shrink-0">
       <div>Header</div>
         <div className="h-full">
           <div>Sider</div>

@@ -4,11 +4,10 @@ date: "2023-10-01"
 slug: "fowardRef"
 tag: ["reactjs", "fowrdRef", "typescript"]
 ---
-
+一般要使用html的tag是直接用useRef即可,如以下程式碼
 ```tsx
-import ChildWindow from ChildWindow.tsx
 const default App = ()=>{
-    const btn = useRef()
+    const btn = useRef(null)
     return(
         <div>
             <button ref={btn}>Button</button>
@@ -16,16 +15,35 @@ const default App = ()=>{
 }
 
 ```
-
-
+但通常會自己包一些component,例如以下
 ```tsx
-const ChildWindow = ()=>{
-    const time = useRef()
+export const ChildWindow = ()=>{
     return (
         <div>
-            <p ref={time}></p>
+            ChildWindow
         </div>
     )
 }
-export default ChildWindow
+
+```
+如果要對ChildWindow使用useRef,則必須要把ChildWindow改成下面這樣
+```tsx
+export const ChildWindow = forwardRef(()=>{
+    return (
+        <div>
+            ChildWindow
+        </div>
+    )
+})
+```
+加上了forwardRef外部才能使用
+```tsx
+const default App = ()=>{
+    const cw = useRef(null)
+    return(
+        <div>
+            <ChildWindow ref={cw}>Button</ChildWindow>
+        </div>)
+}
+
 ```

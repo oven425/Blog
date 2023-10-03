@@ -196,7 +196,7 @@ import { Link, PageProps, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 import ChildWindow, { ChildWindow_Ref } from '../components/ChildWindow';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Layout from '../components/layout';
 
 
@@ -298,21 +298,27 @@ import Layout from '../components/layout';
 // };
 
 const IndexPage = ()=>{
-  const time = useRef(null);
-  React.useEffect(()=>{
-    
-  },[])
-  return (
-    <div ref={time}>
-        <p ></p>
-    </div>
-)
-
-  // return(
-  //   <Layout>
+  // const timeref = useRef<HTMLDivElement>(null);
+  // useEffect(()=>{
+  //   const time1 = setInterval(()=>{
+  //     let time = new Date();
+  //     console.log(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
+  //     if(timeref.current?.innerText != undefined){
+  //       timeref.current.innerText = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+  //     }
       
-  //   </Layout>
-  // )
+  //   },1000)
+  //   return()=>{
+  //     clearTimeout(time1)
+  //   }
+  // },[])
+
+
+  return(
+    <Layout>
+      
+    </Layout>
+  )
 }
 
 export const query = graphql`
