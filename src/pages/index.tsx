@@ -198,7 +198,7 @@ import Seo from '../components/seo'
 import ChildWindow, { ChildWindow_Ref } from '../components/ChildWindow';
 import { useEffect, useRef } from 'react';
 import Layout from '../components/layout';
-
+import jj from '../images/github.svg'
 
 // type allMdxType = {
 //   allMdx: {
