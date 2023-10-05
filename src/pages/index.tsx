@@ -200,18 +200,19 @@ import { useEffect, useRef } from 'react';
 import Layout from '../components/layout';
 import jj from '../images/github.svg'
 
-// type allMdxType = {
-//   allMdx: {
-//     nodes: {
-//       frontmatter: {
-//         date: string,
-//         title: string
-//       },
-//       id: string,
-//       excerpt: string
-//     }[]
-//   }
-// }
+type allMdxType = {
+  allMdx: {
+    nodes: {
+      frontmatter: {
+        date: string,
+        title: string,
+        slug:string
+      },
+      id: string,
+      excerpt: string
+    }[]
+  }
+}
 
 // const IndexPage = ({ data }: PageProps<allMdxType>) => {
 //   return (
@@ -244,7 +245,7 @@ import jj from '../images/github.svg'
 //           <Link to='/'>Blog</Link>
 //             <Link to='/about'>About</Link>
 //             </ul>
-            
+
 //         </aside>
 //         <main className="w-5/6 overflow-y-auto">
 //         <ul>
@@ -297,26 +298,24 @@ import jj from '../images/github.svg'
 //   )
 // };
 
-const IndexPage = ()=>{
-  // const timeref = useRef<HTMLDivElement>(null);
-  // useEffect(()=>{
-  //   const time1 = setInterval(()=>{
-  //     let time = new Date();
-  //     console.log(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
-  //     if(timeref.current?.innerText != undefined){
-  //       timeref.current.innerText = `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-  //     }
-      
-  //   },1000)
-  //   return()=>{
-  //     clearTimeout(time1)
-  //   }
-  // },[])
-
-
-  return(
+const IndexPage = ({ data }: PageProps<allMdxType>) => {
+  console.log(data)
+  return (
+    
     <Layout>
-      
+      <ul className=' m-3'>
+        {
+          data.allMdx.nodes.map((node) => (
+            <article className=' mb-3' key={node.id}>
+              <Link to={`${node.frontmatter.slug}`}>
+              <h2 className='text-4xl font-bold  text-slate-900'>{node.frontmatter.title}</h2>
+              </Link>
+              <p className=' text-blue-400'>Posted: {node.frontmatter.date}</p>
+              <p>{node.excerpt}</p>  
+            </article>
+          ))
+        }
+      </ul>
     </Layout>
   )
 }
@@ -328,6 +327,7 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          slug
         }
         id
         excerpt
