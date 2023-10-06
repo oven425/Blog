@@ -29,6 +29,7 @@
     "gatsby-plugin-vanilla-extract": "^4.0.1",
     "gatsby-remark-highlight-code": "^3.3.0",
     "gatsby-remark-prismjs": "^7.12.0",
+    "gatsby-remark-prismjs-copy-button": "^0.4.0",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-remark": "^6.12.0",
     "gatsby-transformer-sharp": "^5.12.0",

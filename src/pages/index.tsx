@@ -216,16 +216,8 @@ type allMdxType = {
 
 // const IndexPage = ({ data }: PageProps<allMdxType>) => {
 //   return (
-//     // <Layout pageTitle="Home Page">
-//     //   <p>I'm making this by following the Gatsby Tutorial.</p>
-//     //   <StaticImage
-//     //     alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
-//     //     src="../images/clifford.jpg"
-//     //   />
-//     // </Layout>
-
 //     <div className="flex flex-col h-screen">
-//       <header className=" bg-gray-950 h-16 shrink-0">
+//       <header className=" bg-gray-950 h-20 shrink-0">
 //         <div className="flex items-center justify-between h-full ">
 //           <div className="text-white text-3xl font-bold p-1">
 //             Developer notes
@@ -248,7 +240,7 @@ type allMdxType = {
 
 //         </aside>
 //         <main className="w-5/6 overflow-y-auto">
-//         <ul>
+//         {/* <ul>
 //         {
 //           data.allMdx.nodes.map((node) => (
 //             <article key={node.id}>
@@ -259,40 +251,11 @@ type allMdxType = {
 //           ))
 //         }
 
-//       </ul>
-//           {/* main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br /> */}
+//       </ul> */}
+//           main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />main content<br />
 //         </main>
 //       </div>
-//       {/* <ChildWindow ref={cw} title='TestAA'>
-//         <div className="w-full max-w-xs bg-white">
-//           <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-//             <div className="mb-4">
-//               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-//                 Username
-//               </label>
-//               <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
-//             </div>
-//             <div className="mb-6">
-//               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-//                 Password
-//               </label>
-//               <input className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-//               <p className="text-red-500 text-xs italic">Please choose a password.</p>
-//             </div>
-//             <div className="flex items-center justify-between">
-//               <button onClick={x => cw.current?.close()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-//                 Sign In
-//               </button>
-//               <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-//                 Forgot Password?
-//               </a>
-//             </div>
-//           </form>
-//           <p className="text-center text-gray-500 text-xs">
-//             &copy;2020 Acme Corp. All rights reserved.
-//           </p>
-//         </div>
-//       </ChildWindow> */}
+
 //     </div>
 
 //   )
@@ -306,9 +269,9 @@ const IndexPage = ({ data }: PageProps<allMdxType>) => {
       <ul className=' m-3'>
         {
           data.allMdx.nodes.map((node) => (
-            <article className=' mb-3' key={node.id}>
+            <article className=' mb-3 prose prose-lg' key={node.id}>
               <Link to={`${node.frontmatter.slug}`}>
-              <h2 className='text-4xl font-bold  text-slate-900'>{node.frontmatter.title}</h2>
+              <h2 className=''>{node.frontmatter.title}</h2>
               </Link>
               <p className=' text-blue-400'>Posted: {node.frontmatter.date}</p>
               <p>{node.excerpt}</p>  

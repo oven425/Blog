@@ -28,7 +28,10 @@ const config: GatsbyConfig = {
       options: {
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-prismjs`
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+            }
           }
         ],
       },

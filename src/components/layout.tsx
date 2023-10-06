@@ -10,6 +10,7 @@
 // } from './layout.module.css'
 // import { ReactNode } from '@mdx-js/react/lib';
 
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React, { ReactNode } from "react";
 
@@ -62,7 +63,7 @@ type LayoutProps = {
 const Layout = (props: LayoutProps) => {
   return (
     <div className="flex flex-col h-screen w-screen bg-red-300">
-      <div className=" flex-1 bg-slate-900">
+      <header className=" h-16 bg-slate-900">
         <div className=" flex justify-between items-center m-3">
           <h1 className="text-slate-200 text-4xl font-bold">Develope Note</h1>
           <a href='https://github.com/oven425'>
@@ -70,26 +71,35 @@ const Layout = (props: LayoutProps) => {
           </a>
 
         </div>
-      </div>
-      {/* <div className="flex h-full bg-slate-50">
-        <div className="border-r border-gray-400">
-          <StaticImage className="rounded-full w-24 h-24" src="../images/Head sticker.jpg" alt="/"></StaticImage>
-        </div>
-        <div className="flex-1 bg-blue-300">
+      </header>
+      <div className="flex flex-row h-[calc(100vh-4rem)] bg-white">
+        <aside className="w-1/6 overflow-y-auto border-r border-gray-400">
+          <ul>
+            <Link to='/'>Blog</Link>
+            <Link to='/about'>About</Link>
+          </ul>
+
+        </aside>
+        <main className="w-5/6 overflow-y-auto">
           {props.children}
+
+        </main>
+      </div>
+
+      {/* <div className="h-[calc(100vh-4rem)]">
+        <div className="grid grid-cols-[1fr,4fr] h-full bg-slate-50">
+          <div className="border-r border-gray-400">
+            <StaticImage className="rounded-full w-24 h-24" src="../images/Head sticker.jpg" alt="/"></StaticImage>
+          </div>
+          <div className="h-full">
+            <div className=" overflow-auto">
+              {props.children}
+            </div>
+
+          </div>
         </div>
       </div> */}
-      <div className="grid grid-cols-[1fr,4fr] h-full bg-slate-50">
-        <div className="border-r border-gray-400">
-          <StaticImage className="rounded-full w-24 h-24" src="../images/Head sticker.jpg" alt="/"></StaticImage>
-        </div>
-        <div className="h-full">
-          <div className=" overflow-auto">
-            {props.children}
-          </div>
 
-        </div>
-      </div>
 
     </div>
   )
