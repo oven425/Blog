@@ -2,6 +2,21 @@
 title: "Another Post"
 date: "2021-07-24"
 slug: "another-post"
+
 ---
 
 Here's another post! It's even better than the first one!
+
+```javascript{numberLines: true}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
