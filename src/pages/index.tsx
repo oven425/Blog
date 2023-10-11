@@ -206,7 +206,8 @@ type allMdxType = {
       frontmatter: {
         date: string,
         title: string,
-        slug:string
+        slug: string,
+        tags:Array<string>
       },
       id: string,
       excerpt: string
@@ -262,19 +263,27 @@ type allMdxType = {
 // };
 
 const IndexPage = ({ data }: PageProps<allMdxType>) => {
-  console.log(data)
   return (
-    
+
     <Layout>
       <ul className=' m-3'>
         {
           data.allMdx.nodes.map((node) => (
-            <article className=' mb-3 prose prose-lg' key={node.id}>
+            <article className=' prose prose-lg' key={node.id}>
               <Link to={`${node.frontmatter.slug}`}>
-              <h2 className=''>{node.frontmatter.title}</h2>
+                <h2>{node.frontmatter.title}</h2>
               </Link>
               <p className=' text-blue-400'>Posted: {node.frontmatter.date}</p>
-              <p>{node.excerpt}</p>  
+              <p>{node.excerpt}</p>
+              <div className='flex flex-row gap-1'>
+              {
+                node.frontmatter.tags?.map(x=>(
+                  <div>
+                    <button className=' bg-black text-white p-2'>{x}</button>
+                  </div>
+                ))
+              }
+              </div>           
             </article>
           ))
         }
@@ -285,16 +294,21 @@ const IndexPage = ({ data }: PageProps<allMdxType>) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC }}) {
+    allMdx(
+      filter: {frontmatter: {published: {eq: true}}}
+      sort: {frontmatter: {date: DESC}}
+    ) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
+          date(formatString: "YYYY-MM-DD")
           slug
+          title
+          published
+          tags
         }
-        id
         excerpt
       }
+      totalCount
     }
   }
 `

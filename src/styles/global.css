@@ -1,9 +1,11 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* https://sotaryoutarou.github.io/gatsby-prismjs-line-number/*/
+.line-numbers .line-numbers-rows {
+    padding: 1rem 0 1rem 0.5rem;
+}
 /* html
 body{
     width: 100vw;

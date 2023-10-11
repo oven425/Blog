@@ -18,8 +18,7 @@ const BlogPost = ({ data, children }: PageProps<DataType>) => {
   console.log(children)
   return (
     <Layout>
-      {/* <p>{data.mdx.frontmatter.date}</p> */}
-      <article className='prose prose-lg m-3'>
+      <article className='prose prose-lg'>
         {children}
       </article >
 

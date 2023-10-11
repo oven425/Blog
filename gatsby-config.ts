@@ -29,6 +29,11 @@ const config: GatsbyConfig = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-prismjs`,
+          },
+          {
+            resolve: `gatsby-remark-plantuml`,
+          },{
+            resolve:'gatsby-remark-images'
           }
         ],
       },
@@ -50,6 +55,19 @@ const config: GatsbyConfig = {
         "path": "./src/pages/"
       },
       __key: "pages"
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-link-preview`,
+            options: {
+              //...
+            }
+          }
+        ]
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',

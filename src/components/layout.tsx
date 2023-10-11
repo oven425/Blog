@@ -62,11 +62,11 @@ type LayoutProps = {
 //https://blog.camel2243.com/2019/11/14/css-%E6%90%9E%E6%87%82-flex-grow-flex-shirk-%E5%8F%8A-flex-basis-%E4%B8%89%E7%A8%AE%E5%B1%AC%E6%80%A7/
 const Layout = (props: LayoutProps) => {
   return (
-    <div className="flex flex-col h-screen w-screen bg-red-300">
-      <header className=" h-16 bg-slate-900">
+    <div className="flex flex-col h-screen w-screen">
+      <header className=" h-16 bg-slate-900 sm:bg-green-400">
         <div className=" flex justify-between items-center m-3">
           <h1 className="text-slate-200 text-4xl font-bold">Develope Note</h1>
-          <a href='https://github.com/oven425'>
+          <a href='https://github.com/oven425' className="hidden sm:block">
             <StaticImage className=" bg-white " src="../images/github.svg" alt="https://github.com/oven425"></StaticImage>
           </a>
 
@@ -75,32 +75,18 @@ const Layout = (props: LayoutProps) => {
       <div className="flex flex-row h-[calc(100vh-4rem)] bg-white">
         <aside className="w-1/6 overflow-y-auto border-r border-gray-400">
           <ul>
-            <Link to='/'>Blog</Link>
-            <Link to='/about'>About</Link>
+            <li>
+              <Link to='/'>Blog</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
           </ul>
-
         </aside>
         <main className="w-5/6 overflow-y-auto">
           {props.children}
-
         </main>
       </div>
-
-      {/* <div className="h-[calc(100vh-4rem)]">
-        <div className="grid grid-cols-[1fr,4fr] h-full bg-slate-50">
-          <div className="border-r border-gray-400">
-            <StaticImage className="rounded-full w-24 h-24" src="../images/Head sticker.jpg" alt="/"></StaticImage>
-          </div>
-          <div className="h-full">
-            <div className=" overflow-auto">
-              {props.children}
-            </div>
-
-          </div>
-        </div>
-      </div> */}
-
-
     </div>
   )
 }
