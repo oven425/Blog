@@ -70,13 +70,13 @@ const config: GatsbyConfig = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/src/blog`,
         name: `blog`,
-        path: `./src/blog`,
       },
-      __key: "blogs"
-    }]
+    },
+  ]
 };
 
 export default config;

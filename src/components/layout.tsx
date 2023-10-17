@@ -63,7 +63,7 @@ type LayoutProps = {
 const Layout = (props: LayoutProps) => {
   return (
     <div className="flex flex-col h-screen w-screen">
-      <header className=" h-16 bg-slate-900 sm:bg-green-400">
+      <header className=" h-16 bg-green-900 sm:bg-slate-900">
         <div className=" flex justify-between items-center m-3">
           <h1 className="text-slate-200 text-4xl font-bold">Develope Note</h1>
           <a href='https://github.com/oven425' className="hidden sm:block">
@@ -72,7 +72,12 @@ const Layout = (props: LayoutProps) => {
 
         </div>
       </header>
-      <div className="flex flex-row h-[calc(100vh-4rem)] bg-white">
+      <div className="flex flex-row h-[calc(100vh-4rem)] bg-red-300 sm:hidden">
+      <main className="overflow-y-auto">
+          {props.children}
+        </main>
+      </div>
+      <div className="hidden flex-row h-[calc(100vh-4rem)] bg-white sm:flex">
         <aside className="w-1/6 overflow-y-auto border-r border-gray-400">
           <ul>
             <li>
