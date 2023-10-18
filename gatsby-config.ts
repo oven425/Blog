@@ -16,6 +16,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-typescript-css-modules",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
+    `gatsby-plugin-react-helmet`,
     "gatsby-plugin-sitemap",
     {
       resolve: 'gatsby-plugin-manifest',
@@ -32,8 +33,12 @@ const config: GatsbyConfig = {
           },
           {
             resolve: `gatsby-remark-plantuml`,
-          },{
+          },
+          {
             resolve:'gatsby-remark-images'
+          },
+          {
+            resolve:'gatsby-remark-link-preview'
           }
         ],
       },

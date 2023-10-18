@@ -86,6 +86,9 @@ const Layout = (props: LayoutProps) => {
             <li>
               <Link to='/about'>About</Link>
             </li>
+            <li>
+              <Link to='/tags'>Tags</Link>
+            </li>
           </ul>
         </aside>
         <main className="w-5/6 overflow-y-auto">
