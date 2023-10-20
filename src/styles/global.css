@@ -6,20 +6,3 @@
 .line-numbers .line-numbers-rows {
     padding: 1rem 0 1rem 0.5rem;
 }
-/* html
-body{
-    width: 100vw;
-    height: 100vh;
-} */
-
-/* @layer base {
-    h1 {
-      @apply text-2xl;
-    }
-    h2 {
-      @apply text-xl;
-    }
-    h3 {
-      @apply text-lg;
-    }
-  } */

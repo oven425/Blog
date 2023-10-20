@@ -3,7 +3,7 @@ title: "TextBox只能輸入英文"
 date: "2023-10-18"
 slug: "textbox"
 published: true
-tags: ["WPF", "TextBox", "IMD", "輸入法"]
+tags: ["WPF", "InputMethod", "IsInputMethodEnabled"]
 ---
 # TextBox只能輸入英文
 最近做通訊程式,只能傳送英文
@@ -13,8 +13,18 @@ tags: ["WPF", "TextBox", "IMD", "輸入法"]
 
 在網路上找了一些資料,參考了以下連結
 
-[[WPF] TEXTBOX 毎にフォーカス時の IME の変換モードを設定する](https://rksoftware.wordpress.com/2016/05/08/wpf-textbox-%E6%AF%8E%E3%81%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E6%99%82%E3%81%AE-ime-%E3%81%AE%E5%A4%89%E6%8F%9B%E3%83%A2%E3%83%BC%E3%83%89%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/)
 [WPF 设置输入只能英文](https://blog.lindexi.com/post/WPF-%E8%AE%BE%E7%BD%AE%E8%BE%93%E5%85%A5%E5%8F%AA%E8%83%BD%E8%8B%B1%E6%96%87.html)
-```xml
-<TextBox InputMethod.IsInputMethodEnabled="False" ></TextBox>
+
+以上連結的重點是以下程式碼, 讓foucs移到TextBox,會讓輸入法切回英文
+```xaml
+<TextBox InputMethod.IsInputMethodEnabled="False"/>
+```
+
+[[WPF] TEXTBOX 毎にフォーカス時の IME の変換モードを設定する](https://rksoftware.wordpress.com/2016/05/08/wpf-textbox-%E6%AF%8E%E3%81%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E6%99%82%E3%81%AE-ime-%E3%81%AE%E5%A4%89%E6%8F%9B%E3%83%A2%E3%83%BC%E3%83%89%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/)
+
+以上連結的重點是以下程式碼
+讓foucs移到TextBox,會讓輸入法切回英文(半形)
+但是可以在切換出入法
+```xaml
+<TextBox InputMethod.PreferredImeState="On" InputMethod.PreferredImeConversionMode="Alphanumeric"/>
 ```

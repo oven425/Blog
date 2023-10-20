@@ -266,8 +266,8 @@ const IndexPage = ({ data }: PageProps<allMdxType>) => {
     <Layout>
       <ul className=' m-3'>
         {
-          data.allMdx.nodes.map((node) => (
-            <article className=' prose prose-lg' key={node.id}>
+          data.allMdx.nodes.map((node,index) => (
+            <article className=' prose prose-lg' key={index}>
               <Link to={`${node.frontmatter.slug}`}>
                 <h2>{node.frontmatter.title}</h2>
               </Link>
@@ -275,8 +275,8 @@ const IndexPage = ({ data }: PageProps<allMdxType>) => {
               <p>{node.excerpt}</p>
               <div className='flex flex-row gap-1'>
               {
-                node.frontmatter.tags?.map(x=>(
-                  <div>
+                node.frontmatter.tags?.map((x,index)=>(
+                  <div key={index}>
                     <button className=' bg-black text-white p-2'>{x}</button>
                   </div>
                 ))
@@ -305,6 +305,7 @@ export const query = graphql`
           tags
         }
         excerpt
+        id
       }
       totalCount
     }

@@ -14,7 +14,7 @@ type DataType = {
 
 const BlogPost = ({ data, children }: PageProps<DataType>) => {
   //  const BlogPost = ({ data, children }) => {
-  //console.log(data)
+  console.log(data)
   console.log(children)
   return (
     <Layout>
